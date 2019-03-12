@@ -82,7 +82,7 @@
         <el-upload
           class="upload-demo"
           ref="upload"
-          :action="'http://127.0.0.1:18080/upload/singlefile/'+this.uid"
+          :action="'http://152.136.69.13:18080/upload/singlefile/'+this.uid"
           :on-preview="handlePreview"
           :on-remove="handleRemove"
           :file-list="fileList"
@@ -139,7 +139,7 @@ let handleQuery = function () {
 let handleModiSubmit = function () {
   var row1 = this.rows[this.index]
   console.log(row1)
-  var api = 'http://127.0.0.1:18080/file/'+row1.fid
+  var api = 'http://152.136.69.13:18080/file/'+row1.fid
   var params = new URLSearchParams();
   params.append( 'fid', row1.fid);
   params.append( 'filename', this.fname);
@@ -166,7 +166,7 @@ let getModiSucc = function (resm) {
       type: 'warning'
     }).then(() => {
 
-      this.$axios.delete('http://127.0.0.1:18080/file/' + row.fid).then(res => {
+      this.$axios.delete('http://152.136.69.13:18080/file/' + row.fid).then(res => {
 
         if (!res.data.msg=='成功') {
           this.$message({
@@ -184,7 +184,7 @@ let getModiSucc = function (resm) {
     }).catch(e => {})
   }
 let handleDownload = function(index, row) {
-  var api = 'http://127.0.0.1:18080//Download/'+row.fid;
+  var api = 'http://152.136.69.13:18080//Download/'+row.fid;
   this.$axios.get(api).then(function (res) {
     if(res){
       alert("下载成功! 文件保存在 C:\\Users\\25090\\Desktop\\down")
@@ -206,7 +206,7 @@ let getFileInfosucc = function (res) {
 }
   let getRows = function() {
 
-    var api = 'http://127.0.0.1:18080/fall/'+this.uid;
+    var api = 'http://152.136.69.13:18080/fall/'+this.uid;
     this.$axios.get(api).then(this.getFileInfosucc);
 
   }
@@ -233,7 +233,7 @@ let getFileInfosucc = function (res) {
         //this.afterUpload()
       },
       afterUpload(){
-        var api = 'http://127.0.0.1:18080/upload/getUid/'+this.uid;
+        var api = 'http://152.136.69.13:18080/upload/getUid/'+this.uid;
         this.$axios.get(api).then(function (res) {
           console.log(res);
         })

@@ -85,11 +85,11 @@
         this.$refs.LoginForm.validate(valid => {
           if (valid) {
             this.logining = true
-            // this.$axios.get('http://127.0.0.1:18080/file').then(
+            // this.$axios.get('http://152.136.69.13:18080/file').then(
             //   this.getFileSucc
             // )
             console.log('开始请求后台数据，验证返回之类的操作！'+this.LoginForm)
-            var api = 'http://127.0.0.1:18080/login'
+            var api = 'http://152.136.69.13:18080/login'
             var params = new URLSearchParams();
             params.append('uname', this.LoginForm.uname);
             params.append('password', this.LoginForm.password);
