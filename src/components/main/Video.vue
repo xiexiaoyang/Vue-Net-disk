@@ -103,7 +103,7 @@
   }
   let getRows = function() {
 
-    var api = 'http://localhost:18080/fall/' +this.uid;
+    var api = 'http://127.0.0.1:18080/fall/' +this.uid;
     this.$axios.get(api).then(this.getFileInfosucc);
 
   }

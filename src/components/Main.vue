@@ -120,7 +120,7 @@
     this.$router.push('/')
   }
   let loadUIfo = function () {
-    var api = 'http://localhost:18080/user/'+this.urootid
+    var api = 'http://127.0.0.1:18080/user/'+this.urootid
     this.$axios.get(api).then(this.getUserInfosucc)
     this.dialogVisible = true
   }
@@ -135,7 +135,7 @@
   }
   let modiUInfo = function () {
 
-        var api = 'http://localhost:18080/user/'+this.urootid
+        var api = 'http://127.0.0.1:18080/user/'+this.urootid
         var params = new URLSearchParams();
         params.append( 'uname', this.form.uname);
         params.append('uid', this.form.uid);

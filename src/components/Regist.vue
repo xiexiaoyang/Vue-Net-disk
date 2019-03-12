@@ -163,7 +163,7 @@
           if (valid) {
             this.logining = true
             console.log('开始写入后台数据！')
-            var api = 'http://localhost:18080/user'
+            var api = 'http://127.0.0.1:18080/user'
             var params = new URLSearchParams();
             params.append( 'uname', this.ReginForm.username);
             params.append('password', this.ReginForm.password);
